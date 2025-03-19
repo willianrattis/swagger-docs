@@ -105,6 +105,7 @@ body {
 .api-card a {
     color: rgb(0, 51, 198);
     text-decoration: none;
+    text-transform: capitalize;
 }
 
 .api-card a:hover {
@@ -133,4 +134,30 @@ body {
         text-align: center;
         padding-bottom: 20px;
     }
+}
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 15px 0;
+    background-color: #f6f6f6;
+    color: #595959;
+    font-size: 14px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer a {
+    color: rgb(0, 51, 198);
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer a.active {
+    color: #b3b3b3;
+    cursor: default;
+    pointer-events: none;
 }
