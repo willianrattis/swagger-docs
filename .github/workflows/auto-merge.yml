@@ -1,0 +1,28 @@
+name: Auto-merge develop to main
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  merge-develop-to-main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Configure Git
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+      
+      - name: Merge develop into main
+        run: |
+          git checkout main
+          git pull origin main
+          git merge --no-ff origin/develop -m "Auto-merge develop into main"
+          git push origin main
